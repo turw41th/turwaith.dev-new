@@ -1,0 +1,315 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+
+#app {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+    min-height: 100%;
+}
+
+body {
+    background-color: #0A192F;
+    font-family: Arial, sans-serif;
+    color: #8892B0;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+}
+
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 60px;
+}
+
+
+header {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+#logo {
+    width: 100px;
+    height: auto;
+}
+
+main {
+    text-align: left;
+    width: calc(100% - 20vw);
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+@media (max-width: 768px) {
+    main {
+        margin-left: 5vw;
+        margin-right: 5vw;
+        width: calc(100% - 10vw);
+    }
+}
+
+.main {
+    display: grid;
+    place-items: center;
+    min-height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+#name {
+    font-size: 65px;
+    color: lightgrey;
+}
+
+#greeting {
+    font-size: 18px;
+    font-family: Consolas;
+    font-weight: normal;
+    display: block;
+    color: turquoise;
+    margin-bottom: -30px;
+    line-height: 1;
+    margin-left: 2px;
+    margin-top: 250px;
+}
+
+h1 {
+    margin-top: 10px;
+}
+
+h2 {
+    font-size: 25px
+}
+
+a {
+    color: turquoise;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.aboutme {
+    font-size: clamp(1rem, 1.8vw, 1.2rem);
+}
+
+/* Underline animation on hover */
+nav a:hover {
+    color: turquoise;
+}
+
+nav a:hover::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: turquoise;
+    visibility: visible;
+    transform: scaleX(1);
+    transition: all 0.3s ease-in-out;
+}
+
+nav a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: turquoise;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Sticky header styles */
+.header {
+    background-color: #0A192F;
+    font-family: Consolas;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.header .logo {
+    max-height: 40px;
+}
+
+.header .nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.header .nav-links a {
+    color: turquoise;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.header .nav-links a:hover {
+    color: turquoise;
+}
+
+.content-container {
+    margin-top: 60px; /* Adjust this value based on the height of your header */
+    max-width: calc(100% - 40vw);
+    margin-left: 20vw;
+    margin-right: 20vw;
+    width: 100%;
+}
+
+@media (max-width: 768px){
+    .content-container {
+        margin-top: 60px; /* Adjust this value based on the height of your header */
+        max-width: calc(100% - 20vw);
+        margin-left: 10vw;
+        margin-right: 10vw;
+        width: 100%;
+    }
+}
+
+footer {
+    margin-top: 50px;
+    text-align: center;
+    font-family: Consolas;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+/* Scrollbar styles */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #0A192F;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: lightgrey;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+/* Loading spinner styles */
+.loader {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    border: 6px solid rgba(255, 255, 255, 0.25);
+    border-top-color: turquoise;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-family: Consolas, monospace;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    color: turquoise;
+    background-color: transparent;
+    border: 2px solid turquoise;
+    border-radius: 10px; /* Adjust this value to control the curvature of the corners */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.button:hover {
+    background-color: turquoise;
+    color: #0A192F;
+}
+
+
+.subtitle {
+    font-size: 35px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: lightgrey;
+}
+
+
+
+/* Project boxes */
+
+.project-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.project-box {
+    flex: 1 0 45%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: block;
+    text-decoration: none; /* Remove the underline */
+    color: inherit;
+    transition: border-color 0.3s ease; /* Animation on hover */
+}
+
+.project-box:hover {
+    border-color: turquoise;
+}
+
+.project-box h3 {
+    margin-top: 0;
+    color: lightgray;
+}
+
+.project-box p {
+    margin-bottom: 0;
+    color: #8892B0;
+}
+
+#blogpagetitle {
+    top: 0;
+    margin-top: 0;
+}
